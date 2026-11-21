@@ -39,7 +39,7 @@ def get_db_connection():
                     port=Config.DB_PORT,
                     cursorclass=pymysql.cursors.DictCursor,
                     autocommit=True,
-                    connect_timeout=3
+                    connect_timeout=3,
                     ssl={"ca": os.path.join(os.path.dirname(__file__), "isrgrootx1.pem")}
                 )
                 DB_ENGINE = 'mysql'
