@@ -40,6 +40,7 @@ def get_db_connection():
                     cursorclass=pymysql.cursors.DictCursor,
                     autocommit=True,
                     connect_timeout=3
+                    ssl={"ca": os.path.join(os.path.dirname(__file__), "isrgrootx1.pem")}
                 )
                 DB_ENGINE = 'mysql'
                 return conn, 'mysql'
